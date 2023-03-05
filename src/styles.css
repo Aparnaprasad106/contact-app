@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+  @import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100;1,100;1,300;1,500&family=Montserrat:ital,wght@0,300;1,500&display=swap');
+.contact_img{
+    height: 100px;
+    width: 100px;
+}

@@ -1,0 +1,42 @@
+                   
+
+                   CONTACT MANAGEMENT APP
+            -------------------------------------
+
+1.create new project
+2.Run project
+3.Remove all the datas from appcomponent
+4.configure libraries:
+  Bootstrap,Font awesome,Google Fonts
+5.create components needed for this website
+  -all Contacts
+  -add Contact
+  -edit Contact
+  -view contact
+  -navbar
+  -page not found
+6.set up the path for all components
+7.use selector routeroutlet in AppComponent.html
+8.design component html view
+9.create angular service for making api calls
+10.asynchronous call- resolving
+ RxJs-Reactive Extension For Javascript
+   - To resolve asynchronous functions angular uses
+       -observable:
+         -subscribe(observer:call back function)
+11.Api call:
+    import HttpClientModule
+    dependency inject HttpClientModuLe to get request
+12.ActivatedRoute: provide access to information about the route/url/path associated with a component
+   -params: to get the path parameter from the url
+13.Angular Pipe:
+       Transform user input to another format
+       syntax"
+       {{value_expression | pipe-operator [ :format [ :timezone [ :locale]]]}}
+    create pipe:
+     ng g p pipe-folder/pipe-name
+14. Angular Forms
+  Template Drivem forms:
+  using ngModel to binding
+     
+ngIf: "condition"when condition is true, html element will add else remove the DOM

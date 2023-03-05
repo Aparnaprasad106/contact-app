@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+        <h3>Edit Contact Page</h3>
+   <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et reiciendis recusandae perferendis veniam necessitatibus, magni, illum blanditiis temporibus hic sunt doloremque incidunt molestias vitae ipsam dignissimos quam voluptate repellat quo!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut distinctio officia odio voluptatem harum, placeat autem voluptatibus qui, sunt corrupti accusantium corporis nesciunt nostrum sequi quaerat minima numquam doloribus itaque.
+   </p>
+    </div>
+</div>
+<!-- <pre>
+    {{contact|json}}
+</pre> -->
+<!-- contact form design -->
+<div class="container mt-5">
+    <div class="row text">
+        <div class="col-md-6">
+            <!-- form design -->
+            <form #editContactForm="ngForm" class="border p-3">
+                <!-- id -->
+                <div class="mb-2">
+                    <input type="text" name="id" #id="ngModel" [(ngModel)]="contact.id" [value]="contact.id" placeholder="contact id" class="form-control"required>
+                </div>
+                <div *ngIf="id.invalid && id.touched" class="text-danger mb-2">invalid id</div>
+
+                 <!-- name -->
+                 <div class="mb-2">
+                    <input type="text" name="name"  #name="ngModel" [(ngModel)]="contact.name"  placeholder="contact name" class="form-control"required>
+                </div>
+                <div *ngIf="name.invalid && name.touched" class="text-danger mb-2">invalid name</div>
+
+                 <!-- image -->
+                 <div class="mb-2">
+                    <input type="text" name="photo"  #photo="ngModel" [(ngModel)]="contact.photo"   placeholder="contact imageURL" class="form-control"required>
+                </div>
+                <div *ngIf="photo.invalid && photo.touched" class="text-danger mb-2">invalid imageURL</div>
+
+                 <!-- email -->
+                 <div class="mb-2">
+                    <input type="text" name="email" email  #email="ngModel" [(ngModel)]="contact.email"  placeholder="contact email" class="form-control"required>
+                </div>
+                <div *ngIf="email.invalid && email.touched" class="text-danger mb-2">invalid email</div>
+                <!-- mobile -->
+                <div class="mb-2">
+                    <input type="text" name="mobile"  #mobile="ngModel" [(ngModel)]="contact.mobile" maxlength="10" minlength="10" placeholder="contact mobile" class="form-control"required>
+                </div> 
+                <div *ngIf="mobile.invalid && mobile.touched" class="text-danger mb-2">invalid mobile</div>
+
+                <!-- company -->
+                <div class="mb-2">
+                    <input type="text" name="company"  #company="ngModel" [(ngModel)]="contact.company" placeholder="contact company" class="form-control"required>
+                </div> 
+                <div *ngIf="company.invalid && company.touched" class="text-danger mb-2">invalid id</div>
+                <!-- title -->
+                <div class="mb-2">
+                    <input type="text" name="title"  #title="ngModel" [(ngModel)]="contact.title"   placeholder="contact title" class="form-control"required>
+                </div>
+                 <!-- group -->
+                <div class="mb-2"> 
+                    <select name="groupId" [(ngModel)]="contact.groupId"  class="form-control" required>
+                        <option selected hidden disabled>Choose a group</option>
+                        <option [value]="group.id" *ngFor="let group of Allgroups">{{group.name}}</option>
+                    </select>
+                </div>
+                <!-- edit button -->
+                <div class="mb-2">
+                    <input (click)="editContact(contact)" [disabled]="editContactForm.invalid" type="button" value="update" class="btn btn-success">
+                    <a class="btn btn-warning ms-3" routerLink="">Close</a>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-md-4">
+          <!-- image -->
+          <img width="300px" height="300px" [src]="contact.photo" alt="contact image">
+
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>

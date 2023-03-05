@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row">
+        <h3>Add new Contact Page</h3>
+   <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et reiciendis recusandae perferendis veniam necessitatibus, magni, illum blanditiis temporibus hic sunt doloremque incidunt molestias vitae ipsam dignissimos quam voluptate repellat quo!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut distinctio officia odio voluptatem harum, placeat autem voluptatibus qui, sunt corrupti accusantium corporis nesciunt nostrum sequi quaerat minima numquam doloribus itaque.
+   </p>
+    </div>
+</div>
+<!-- <pre>
+    {{contact|json}}
+</pre> -->
+<!-- contact form design -->
+<div class="container mt-5">
+    <div class="row text">
+        <div class="col-md-6">
+            <!-- form design -->
+            <form #addContactForm="ngForm" class="border p-3">
+                <!-- id -->
+                <div class="mb-2">
+                    <input type="text" name="id" #id="ngModel" [(ngModel)]="contact.id" placeholder="contact id" class="form-control" required>
+                </div>
+                <!-- id validation msg -->
+                <div *ngIf="id.invalid && id.touched" class="text-danger mb-2">
+                    invalid id
+                </div>
+                 <!-- name -->
+                 <div class="mb-2">
+                    <input type="text" name="name" #name="ngModel"[(ngModel)]="contact.name" placeholder="contact name" class="form-control" required>
+                </div>
+                <div *ngIf="name.invalid && name.touched" class="text-danger mb-2">invalid name</div>
+                 <!-- image -->
+                 <div class="mb-2">
+                    <input type="text"name="img" #image="ngModel" [(ngModel)]="contact.photo" placeholder="contact imageURL" class="form-control" required>
+                </div>
+                <div *ngIf="image.invalid && image.touched" class="text-danger mb-2">invalid image</div>
+
+                 <!-- email -->
+                 <div class="mb-2">
+                    <input type="text" email name="email" #email="ngModel" [(ngModel)]="contact.email" placeholder="contact email" class="form-control"required>
+                </div>
+                <div *ngIf="email.invalid && email.touched" class="text-danger mb-2">invalid email</div>
+
+                <!-- mobile -->
+                <div class="mb-2">
+                    <input type="text"name="mobile" #mobile="ngModel" pattern="[0-9]*"  [(ngModel)]="contact.mobile" placeholder="contact mobile" class="form-control" required>
+                </div>
+                <div *ngIf="mobile.invalid && mobile.touched" minlength="10" maxlength="10" class="text-danger mb-2">invalid mobile</div>
+
+                <!-- company -->
+                <div class="mb-2">
+                    <input type="text"name="company" #company="ngModel" [(ngModel)]="contact.company" placeholder="contact company" class="form-control" required>
+                </div> 
+                <div *ngIf="company.invalid && company.touched" class="text-danger mb-2">invalid company name</div>
+
+                <!-- title -->
+                <div class="mb-2">
+                    <input type="text"name="title" #title="ngModel" [(ngModel)]="contact.title" placeholder="contact title" class="form-control"required>
+                </div>
+                <div *ngIf="name.invalid && name.touched" class="text-danger mb-2">invalid title</div>
+
+                 <!-- group -->
+                <div class="mb-2">
+                    <select name="groupId" #groupid="ngModel" pattern="[0-9]" [(ngModel)]="contact.groupId" class="form-control"required>
+                        <option selected hidden disabled>{{contact.groupId}}</option>
+                        <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+                        
+                    </select>
+                </div>
+                <div *ngIf="groupid.invalid && groupid.touched" class="text-danger mb-2">invalid group name</div>
+
+                <!-- add button -->
+                <div class="mb-2">
+                    <input [disabled]="addContactForm.invalid" type="button" (click)="addContact(contact)" value="Create" class="btn btn-success">
+                    <a class="btn btn-warning ms-3" routerLink="">Close</a>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-md-4">
+          <!-- image -->
+          <img width="300px" height="300px" [src]="contact.photo" alt="contact image">
+
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
